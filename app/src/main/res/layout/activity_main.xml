@@ -16,7 +16,6 @@
         android:id="@+id/mytablayout"
         app:tabMode="fixed"
         app:tabSelectedTextColor="#0ff"
-        app:tabTextAppearance="12sp"
         app:tabTextColor="#000"
         app:tabIndicatorHeight="2dp"
         android:background="@android:color/transparent">

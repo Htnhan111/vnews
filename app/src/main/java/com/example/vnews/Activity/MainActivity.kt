@@ -22,13 +22,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         var mainVpAdapter : MainVpAdapter = MainVpAdapter(supportFragmentManager)
-        mainVpAdapter.addFragment(Fragment_home(), "Home")
-        mainVpAdapter.addFragment(Fragment_technical(), "Công nghệ")
-        mainVpAdapter.addFragment(Fragment_hotnews(), "Tin nóng")
-        mainVpAdapter.addFragment(Fragment_khampha(), "Khám phá")
-        mainVpAdapter.addFragment(Fragment_profile(), "Người dùng")
+        mainVpAdapter.addFragment(Fragment_home(), "")
+        mainVpAdapter.addFragment(Fragment_technical(), "")
+        mainVpAdapter.addFragment(Fragment_hotnews(), "")
+        mainVpAdapter.addFragment(Fragment_khampha(), "")
+        mainVpAdapter.addFragment(Fragment_profile(), "")
         viewPager.setAdapter(mainVpAdapter)
         tabLayout.setupWithViewPager(viewPager)
+        tabLayout.getTabAt(0)?.setIcon(R.drawable.ic_home)
+        tabLayout.getTabAt(1)?.setIcon(R.drawable.ic_tech)
+        tabLayout.getTabAt(2)?.setIcon(R.drawable.ic_fire)
+        tabLayout.getTabAt(3)?.setIcon(R.drawable.ic_compass)
+        tabLayout.getTabAt(4)?.setIcon(R.drawable.ic_user)
     }
 
     private fun anhXa() {
