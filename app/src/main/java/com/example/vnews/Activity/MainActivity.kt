@@ -1,18 +1,23 @@
 package com.example.vnews.Activity
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.example.vnews.Adapter.MainVpAdapter
 import com.example.vnews.Fragment.*
 import com.example.vnews.R
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var tabLayout: TabLayout
     lateinit var viewPager: ViewPager
+    lateinit var nvMenu: NavigationView
+    lateinit var drlayout: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,5 +44,11 @@ class MainActivity : AppCompatActivity() {
     private fun anhXa() {
         tabLayout = findViewById(R.id.mytablayout)
         viewPager = findViewById(R.id.myviewpager)
+        nvMenu = findViewById(R.id.nvMenu)
+        drlayout = findViewById(R.id.drawerlayout)
+    }
+
+    fun openMenu(view: View?) {
+        drlayout.openDrawer(GravityCompat.END)
     }
 }
