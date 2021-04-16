@@ -38,10 +38,10 @@
                         android:background="@drawable/design_find_top"
                         android:hint="Bạn cần tìm gì" />
                     <ImageView
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginRight="5dp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_alignEnd="@id/etFind"
                         android:src="@drawable/ic_search"
                         />
@@ -55,8 +55,8 @@
                     android:scaleType="fitXY"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
                     android:onClick="openMenu"/>
 
             </LinearLayout>
