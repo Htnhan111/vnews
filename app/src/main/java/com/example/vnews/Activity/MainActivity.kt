@@ -5,12 +5,15 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.example.vnews.Adapter.MainVpAdapter
-import com.example.vnews.Fragment.*
 import com.example.vnews.R
+import com.example.vnews.adapterJ.MainVpAdapter
+import com.example.vnews.fragmentJ.*
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,12 +29,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        var mainVpAdapter : MainVpAdapter = MainVpAdapter(supportFragmentManager)
-        mainVpAdapter.addFragment(Fragment_home(), "")
-        mainVpAdapter.addFragment(Fragment_technical(), "")
-        mainVpAdapter.addFragment(Fragment_hotnews(), "")
-        mainVpAdapter.addFragment(Fragment_khampha(), "")
-        mainVpAdapter.addFragment(Fragment_profile(), "")
+        var mainVpAdapter : MainVpAdapter =
+            MainVpAdapter(supportFragmentManager, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
+        mainVpAdapter.addFragment(FragmentHome(), "")
+        mainVpAdapter.addFragment(FragmentTechnical(), "")
+        mainVpAdapter.addFragment(FragmentHotnews(), "")
+        mainVpAdapter.addFragment(FragmentKhampha(), "")
+        mainVpAdapter.addFragment(FragmentProfile(), "")
         viewPager.setAdapter(mainVpAdapter)
         tabLayout.setupWithViewPager(viewPager)
         tabLayout.getTabAt(0)?.setIcon(R.drawable.ic_home)
